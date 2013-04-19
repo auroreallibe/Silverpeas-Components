@@ -23,6 +23,9 @@
  */
 package com.stratelia.webactiv.almanach.control;
 
+import org.silverpeas.calendar.CalendarDay;
+import org.silverpeas.calendar.CalendarViewType;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
@@ -30,8 +33,7 @@ import java.util.List;
 import java.util.Locale;
 
 import static com.silverpeas.util.StringUtil.isDefined;
-import static com.stratelia.webactiv.almanach.control.CalendarViewType.MONTHLY;
-import static com.stratelia.webactiv.almanach.control.CalendarViewType.WEEKLY;
+import static org.silverpeas.calendar.CalendarViewType.MONTHLY;
 
 /**
  * It defines a window in time of the calendar belonging to a given almanach instance. The type of
@@ -41,7 +43,7 @@ import static com.stratelia.webactiv.almanach.control.CalendarViewType.WEEKLY;
 public class AlmanachCalendarView {
 
   private AlmanachDTO almanach;
-  private AlmanachDay currentDay;
+  private CalendarDay currentDay;
   private List<DisplayableEventOccurrence> events = new ArrayList<DisplayableEventOccurrence>();
   private CalendarViewType type = MONTHLY;
   private String label = "";
@@ -56,7 +58,7 @@ public class AlmanachCalendarView {
    * @param currentDay the current day in this calendar view.
    * @param viewType the type of view the calendar should be rendered.
    */
-  public AlmanachCalendarView(final AlmanachDTO almanach, final AlmanachDay currentDay,
+  public AlmanachCalendarView(final AlmanachDTO almanach, final CalendarDay currentDay,
       final CalendarViewType viewType) {
     this.almanach = almanach;
     this.currentDay = currentDay;
@@ -85,19 +87,19 @@ public class AlmanachCalendarView {
    *
    * @return the first day of the window in time.
    */
-  public AlmanachDay getFirstDay() {
-    AlmanachDay firstDay = null;
+  public CalendarDay getFirstDay() {
+    CalendarDay firstDay = null;
     Calendar calendar = Calendar.getInstance();
     switch (type) {
       case MONTHLY:
         calendar.setTime(currentDay.getDate());
         calendar.set(Calendar.DAY_OF_MONTH, 1);
-        firstDay = new AlmanachDay(calendar.getTime());
+        firstDay = new CalendarDay(calendar.getTime());
         break;
       case WEEKLY:
         calendar.setTime(currentDay.getDate());
         calendar.set(Calendar.DAY_OF_WEEK, calendar.getFirstDayOfWeek());
-        firstDay = new AlmanachDay(calendar.getTime());
+        firstDay = new CalendarDay(calendar.getTime());
         break;
       default:
         throw new UnsupportedOperationException("The type " + type.toString()
@@ -111,8 +113,8 @@ public class AlmanachCalendarView {
    *
    * @return the last day of the window in time.
    */
-  public AlmanachDay getLastDay() {
-    AlmanachDay lastDay = null;
+  public CalendarDay getLastDay() {
+    CalendarDay lastDay = null;
     Calendar calendar = Calendar.getInstance();
     switch (type) {
       case MONTHLY:
@@ -120,14 +122,14 @@ public class AlmanachCalendarView {
         calendar.set(Calendar.DAY_OF_MONTH, 1);
         calendar.add(Calendar.MONTH, 1);
         calendar.add(Calendar.DAY_OF_YEAR, -1);
-        lastDay = new AlmanachDay(calendar.getTime());
+        lastDay = new CalendarDay(calendar.getTime());
         break;
       case WEEKLY:
         calendar.setTime(currentDay.getDate());
         calendar.set(Calendar.DAY_OF_WEEK, calendar.getFirstDayOfWeek());
         calendar.add(Calendar.WEEK_OF_YEAR, 1);
         calendar.add(Calendar.DAY_OF_YEAR, -1);
-        lastDay = new AlmanachDay(calendar.getTime());
+        lastDay = new CalendarDay(calendar.getTime());
         break;
       default:
         throw new UnsupportedOperationException("The type " + type.toString()
@@ -175,7 +177,7 @@ public class AlmanachCalendarView {
    *
    * @return the current day.
    */
-  public AlmanachDay getCurrentDay() {
+  public CalendarDay getCurrentDay() {
     return currentDay;
   }
 

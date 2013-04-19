@@ -64,6 +64,8 @@ import com.stratelia.webactiv.util.exception.UtilException;
 import org.apache.commons.io.FileUtils;
 import org.silverpeas.attachment.AttachmentServiceFactory;
 import org.silverpeas.attachment.model.SimpleDocument;
+import org.silverpeas.calendar.CalendarDay;
+import org.silverpeas.calendar.CalendarViewType;
 import org.silverpeas.upload.UploadedFile;
 import org.silverpeas.wysiwyg.WysiwygException;
 import org.silverpeas.wysiwyg.control.WysiwygController;
@@ -88,7 +90,7 @@ import static com.silverpeas.export.ExportDescriptor.withWriter;
 import static com.silverpeas.pdc.model.PdcClassification.NONE_CLASSIFICATION;
 import static com.silverpeas.pdc.model.PdcClassification.aPdcClassificationOfContent;
 import static com.silverpeas.util.StringUtil.isDefined;
-import static com.stratelia.webactiv.almanach.control.CalendarViewType.*;
+import static org.silverpeas.calendar.CalendarViewType.*;
 import static com.stratelia.webactiv.util.DateUtil.parse;
 
 /**
@@ -923,7 +925,7 @@ public class AlmanachSessionController extends AbstractComponentSessionControlle
   public AlmanachCalendarView getYearlyAlmanachCalendarView() throws AlmanachException,
       AlmanachNoSuchFindEventException, RemoteException {
     AlmanachDTO almanachDTO = getAlmanachDTO(isAgregationUsed());
-    AlmanachDay currentAlmanachDay = new AlmanachDay(currentDay.getTime());
+    CalendarDay currentAlmanachDay = new CalendarDay(currentDay.getTime());
     AlmanachCalendarView view = new AlmanachCalendarView(almanachDTO, currentAlmanachDay, YEARLY);
     view.setLocale(getLanguage());
     if (isWeekendNotVisible()) {
@@ -948,7 +950,7 @@ public class AlmanachSessionController extends AbstractComponentSessionControlle
       AlmanachNoSuchFindEventException, RemoteException {
 
     AlmanachDTO almanachDTO = getAlmanachDTO(isAgregationUsed());
-    AlmanachDay currentAlmanachDay = new AlmanachDay(currentDay.getTime());
+    CalendarDay currentAlmanachDay = new CalendarDay(currentDay.getTime());
     AlmanachCalendarView view = new AlmanachCalendarView(almanachDTO, currentAlmanachDay, MONTHLY);
     view.setLocale(getLanguage());
     if (isWeekendNotVisible()) {
@@ -974,7 +976,7 @@ public class AlmanachSessionController extends AbstractComponentSessionControlle
       AlmanachNoSuchFindEventException, RemoteException {
 
     AlmanachDTO almanachDTO = getAlmanachDTO(isAgregationUsed());
-    AlmanachDay currentAlmanachDay = new AlmanachDay(currentDay.getTime());
+    CalendarDay currentAlmanachDay = new CalendarDay(currentDay.getTime());
     AlmanachCalendarView view = new AlmanachCalendarView(almanachDTO, currentAlmanachDay, WEEKLY);
     view.setLocale(getLanguage());
     if (isWeekendNotVisible()) {
@@ -1012,7 +1014,7 @@ public class AlmanachSessionController extends AbstractComponentSessionControlle
   public AlmanachCalendarView getAlmanachCalendarViewOnTheNextEvents(boolean aggregated) throws
       AlmanachException, AlmanachNoSuchFindEventException, RemoteException {
     AlmanachDTO almanachDTO = getAlmanachDTO(aggregated);
-    AlmanachDay currentAlmanachDay = new AlmanachDay(currentDay.getTime());
+    CalendarDay currentAlmanachDay = new CalendarDay(currentDay.getTime());
     AlmanachCalendarView view = new AlmanachCalendarView(almanachDTO, currentAlmanachDay,
         NEXT_EVENTS);
 
