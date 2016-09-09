@@ -642,7 +642,7 @@
                                      componentInstanceIdAlias="<%=alias%>"
                                      resourceId="<%=id%>"
                                      contentLanguage="<%=language%>"
-                                     greatestUserRole="<%=SilverpeasRole.from(attProfile)%>"
+                                     highestUserRole="<%=SilverpeasRole.from(attProfile)%>"
                                      reloadCallbackUrl="${callbackUrl}"
                                      hasToBeIndexed="<%=StringUtil.getBooleanValue(indexIt)%>"
                                      attachmentPosition="${attachmentPosition}"
