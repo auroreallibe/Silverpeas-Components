@@ -22,30 +22,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 		
-/* publication link manager*/
-.dimensionTable {
-	height: 500px; 
-	width: 730px;
-}
-
-.firstTd {
-	height: 300px; 
-	width: 250px; 
-	left: 0px; 
-	top: 0px;
-	border:1px solid grey; 
-}
-
-.treeDivDisplay {
-	height: 500px;
-	width: 220px; 
-	left: 0px; 
-	top: 0px;
-}
-.publistDisplay {
-	width: 480px;
-	overflow: auto;
-}
 
 /* Search zone */
 #searchZone {
@@ -511,20 +487,6 @@ a.button.refuse span {
   padding: 2px 0px 2px 24px;
 }
 
-.yui-skin-sam .dimensionTable #pubList ul li {
-  position:relative;
-}
- 
-.yui-skin-sam .dimensionTable #pubList ul li .firstColumn .selection input{
-  position:absolute;
-  top:0;
-  left:0;
-}
- 
-.yui-skin-sam .dimensionTable #pubList .publication .line1 {
- 	padding-left: 32px;
-}
-
 .rightContent{
 	width:310px;
 	clear:right;
@@ -945,4 +907,74 @@ a.button.refuse span {
 
 #noPublicationMessage p {
 	padding:0.5em 1em;
+}
+
+/* see also */ 
+
+#block-seeAlso ul {
+  list-style-type:none;
+  padding:0;
+  margin:1em 0.5em;
+  color:#4d4d4d;
+  border-bottom:1px solid #e9e9e9;
+}
+
+#block-seeAlso  ul li {
+  background:transparent url(../../../util/icons/list-puce-green.gif) 4px 8px no-repeat;
+  line-height:14px;
+  margin:1em 0;
+  padding:2px 18px 4px 18px;
+}
+
+
+#block-seeAlso  ul li:last-child {
+	margin-bottom:0;
+}
+
+#block-seeAlso .showActionsOnMouseOver {
+		position:relative;
+}
+
+#block-seeAlso .showActionsOnMouseOver .actionShownOnMouseOver{
+	position:absolute;
+	top:2px;
+	left:-2px;
+}
+
+#block-seeAlso .showActionsOnMouseOver .actionShownOnMouseOver .delete{
+  background: url(../../../util/icons/delete.gif)  no-repeat;
+  width:16px;
+  height:16px;
+  display:block;
+  text-indent:-300em;
+}
+/* publication link manager*/
+.dimensionTable {
+	height: 500px; 
+	width: 100%;
+	padding-top:1em;
+}
+
+.dimensionTable > tbody > tr > td:first-child {
+	width:250px;
+}
+.dimensionTable td.secondTd {
+	padding-right:1em;
+}
+.yui-skin-sam .dimensionTable #pubList ul li .firstColumn {
+  padding-left: 26px;
+}
+.yui-skin-sam .dimensionTable #pubList .publication .line1 ,
+.yui-skin-sam .dimensionTable #pubList .publication .line2, 
+.yui-skin-sam .dimensionTable #pubList .publication .line3, 
+.yui-skin-sam .dimensionTable #pubList .publication .files, 
+.yui-skin-sam .dimensionTable #pubList .publication .publication-name{
+ 	padding-left: 0px;
+}
+.yui-skin-sam .dimensionTable  #pubList .publication {
+	padding-top:3px;
+}
+
+.publistDisplay {
+	min-width: 480px;
 }

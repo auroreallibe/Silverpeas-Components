@@ -51,7 +51,7 @@
 
 <c:if test="${enabled}">
   <c:if test="${not empty links}">
-    <div id="block-seeAlso">
+    <div class="bgDegradeGris" id="block-seeAlso">
       <div class="bgDegradeGris header">
         <h4 class="clean"><fmt:message key="PubReferenceeParAuteur"/></h4>
       </div>
@@ -59,7 +59,7 @@
         <c:forEach var="seeAlso" items="${links}">
           <li id="link-${seeAlso.id}" class="showActionsOnMouseOver"><a href="${seeAlso.pub.permalink}" class="sp-permalink" title="${seeAlso.pub.description}">${seeAlso.pub.name}</a>
             <c:if test="${not readOnly && not seeAlso.reverse}">
-              <span class="actionShownOnMouseOver"><a href="#" onclick="deleteLink('${seeAlso.id}');return false;">Supp...</a></span>
+              <div class="actionShownOnMouseOver"><a class="delete" href="#" onclick="deleteLink('${seeAlso.id}');return false;">Supp...</a></div>
             </c:if>
           </li>
         </c:forEach>
