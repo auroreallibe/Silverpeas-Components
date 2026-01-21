@@ -295,10 +295,16 @@ br.clear {
   vertical-align: middle;
 }
 
-.gallery-fiche-media #backToSearch {
+.gallery-fiche-media .hautFrame:has(#pagination) #backToSearch {
   height: auto;
   left: calc(100% - var(--right-side-width));
   position: absolute;
+}
+
+.gallery-fiche-media .hautFrame:not(:has(#pagination)) #backToSearch {
+  height: auto;
+  float: right;
+  margin-right: calc( var(--right-side-width) - 24px - 6ch - 1em );
 }
 
 .gallery-fiche-media #backToSearch a.button {

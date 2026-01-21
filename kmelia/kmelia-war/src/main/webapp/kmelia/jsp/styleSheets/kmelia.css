@@ -130,10 +130,16 @@ body.treeView>div[id*="kmelia"]>div.kmelia #topPage .cellBodyWindows {
   vertical-align: top;
 }
 
-#preview #backToSearch {
+#preview .hautFrame:has(#pagination) #backToSearch {
   height: auto;
   left: calc(100% - var(--right-side-width));
   position: absolute;
+}
+
+#preview .hautFrame:not(:has(#pagination)) #backToSearch {
+  height: auto;
+  float: right;
+  margin-right: calc( var(--right-side-width) - 24px - 16ch - 1em );
 }
 
 #preview #backToSearch a.button {
