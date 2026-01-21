@@ -206,7 +206,7 @@ fieldset#answers legend {
 
 .eventName {
   color:var(--color-titre);
-  font-size:var( --font-size-titre);
+  font-size:var( --sp-font-size-titre);
   font-weight:var( --font-weight-titre);
 }
 

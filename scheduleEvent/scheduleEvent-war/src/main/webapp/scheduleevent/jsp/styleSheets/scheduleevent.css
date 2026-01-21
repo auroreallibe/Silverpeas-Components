@@ -83,7 +83,7 @@ td.txtlibform {
 .selected_date h3 {
 	padding:0;
 	margin:0 0 0.5em 0;
-	font-size:var(--font-size-titre);
+	font-size:var(--sp-font-size-titre);
 	font-weight: var(--font-weight-titre);
 }
 

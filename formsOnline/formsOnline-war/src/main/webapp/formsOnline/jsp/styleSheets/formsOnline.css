@@ -71,7 +71,7 @@
 .my-formsOnline-title {
   padding: 0;
   margin: 2em 0 0.5em;
-  font-size:var(--font-size-titre);
+  font-size:var(--sp-font-size-titre);
   font-weight:var(--font-weight-titre);
   color: var(--color-titre);
   line-height: 90%;
@@ -103,7 +103,7 @@
 
 #my-formsOnline-refused .my-formsOnline-title ,
 #my-formsOnline-validate .my-formsOnline-title {
-  font-size:var(--font-size-titre);
+  font-size:var(--sp-font-size-titre);
   font-weight:var(--font-weight-titre);
 }
 
@@ -149,7 +149,7 @@
 }
 
 .my-formsOnline-title {
-  font-size:var(--font-size-titre);
+  font-size:var(--sp-font-size-titre);
   line-height: 1em;
 }
 
@@ -264,7 +264,7 @@
 }
 
 #all-formsOnline .form-title {
-  font-size:var(--font-size-titre);
+  font-size:var(--sp-font-size-titre);
   font-weight:var(--font-weight-titre);
 }
 
