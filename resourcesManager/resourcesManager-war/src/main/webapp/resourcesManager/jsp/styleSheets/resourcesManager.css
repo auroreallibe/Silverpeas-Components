@@ -27,7 +27,7 @@
 
 .titrePanier {
   margin: 0.25em;
-  font-size: var(--font-size-titre);
+  font-size: var(--sp-font-size-titre);
   font-weight: var(--font-weight-titre);
   text-align: center;
 }
@@ -211,7 +211,7 @@ hr.clear {
 
 .reservationList h5 {
   color: var(--color-text-date);
-  font-size: var(--font-size-titre);
+  font-size: var(--sp-font-size-titre);
   font-weight: var(--font-weight-titre);
   margin: 8px 0 0;
   padding: 0;
@@ -226,7 +226,7 @@ hr.clear {
 .reservationList h4 a,
 .event-qtip h4 a {
   color: var(--color-titre-avec-deux-couleurs);
-  font-size: var(--font-size-titre);
+  font-size: var(--sp-font-size-titre);
 }
 
 .reservationDesc {
