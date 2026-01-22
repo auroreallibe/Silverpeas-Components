@@ -284,11 +284,7 @@
 
   <view:window>
     <view:frame>
-        <table>
-          <caption></caption>
-          <th id="classified-view-header"></th>
-        <tr>
-            <td>
+              <div id="classified-view-header"></div>
               <div class="rightContent">
                 <c:if test="${not empty index}">
                   <viewTags:displayIndex nbItems="${index.nbItems}" index="${index.currentIndex}" />
@@ -371,20 +367,12 @@
                   </c:if>
                 </div>
               </div>
-             </td>
-          </tr>
-
-        <tr>
-          <td>
             <!--Afficher les commentaires-->
             <c:if test="${commentsEnabled}">
               <viewTags:displayComments componentId="${instanceId}"
                                         resourceType="${classified.contributionType}"
                                         resourceId="${classified.id}" />
             </c:if>
-          </td>
-        </tr>
-      </table>
     </view:frame>
   </view:window>
   <form name="classifiedForm" action="" method="post">
